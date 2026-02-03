@@ -1,0 +1,7 @@
+airflow_dbt_warehouse:
+  target: dev
+  outputs:
+    dev:
+      type: sqlite
+      threads: 1
+      database: data/local_warehouse.db
