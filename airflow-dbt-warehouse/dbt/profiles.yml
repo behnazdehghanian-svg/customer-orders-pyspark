@@ -1,7 +1,0 @@
-default:
-  target: dev
-  outputs:
-    dev:
-      type: sqlite
-      threads: 1
-      database: "dbt_local.db"
