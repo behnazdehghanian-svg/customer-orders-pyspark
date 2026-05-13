@@ -1,0 +1,34 @@
+# Customer Orders ETL with PySpark
+
+## Overview
+This project demonstrates a **local ETL workflow** using PySpark. It reads customer, order, and product CSV files, performs transformations, calculates total order prices, and aggregates total spending per customer.
+
+---
+## Detailed Explanation
+
+### `customer_orders_etl/`
+
+- **`ingest.py`**  
+  - Reads CSV files (`customers.csv`, `orders.csv`, `products.csv`) using PySpark.  
+  - Loads them into Spark DataFrames.  
+  - Prints the number of rows in each dataset to verify ingestion.  
+
+- **`transform.py`**  
+  - Joins `orders` with `customers` and `products`.  
+  - Computes a new column `total_price = quantity * price` for each order.  
+  - Shows the full order table with customer names, product names, and total price.  
+
+- **`analytics.py`**  
+  - Aggregates the data from the transformation step.  
+  - Computes total spending per customer using `groupBy` and `sum`.  
+  - Displays a table with `customer_id`, `name`, and `total_spent`.  
+
+### `data/`
+
+- **`customers.csv`** — Sample customer data: `customer_id`, `name`, and possibly other details.  
+- **`orders.csv`** — Sample order data: `order_id`, `customer_id`, `product_id`, `quantity`.  
+- **`products.csv`** — Sample product data: `product_id`, `name`, `price`.  
+
+### `requirements.txt`
+
+- Lists Python dependencies. Currently, it includes:

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Watercolor Flow ✨</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="title">Watercolor Flow</div>
+
+  <div id="game-container">
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="ui">
+
+      <!-- PAPER -->
+      <div class="panel">
+        <div class="panel-label">📄 Paper</div>
+        <div class="panel-row">
+          <button class="paper-btn selected" data-paper="cream" style="background:#f2ece4;" title="Cream"></button>
+          <button class="paper-btn" data-paper="white" style="background:#ffffff;" title="White"></button>
+          <button class="paper-btn" data-paper="aged" style="background:#e8d5a3;" title="Aged"></button>
+          <button class="paper-btn" data-paper="blush" style="background:#fce4ec;" title="Blush"></button>
+          <button class="paper-btn" data-paper="sage" style="background:#e8f5e9;" title="Sage"></button>
+          <button class="paper-btn" data-paper="night" style="background:#1a1a2e;" title="Night"></button>
+        </div>
+      </div>
+
+      <!-- BRUSH TYPE -->
+      <div class="panel">
+        <div class="panel-label">🖌️ Brush</div>
+        <div class="panel-row">
+          <button class="brush-btn selected" data-brush="watercolor">Watercolor</button>
+          <button class="brush-btn" data-brush="inkdrop">Ink Drop</button>
+          <button class="brush-btn" data-brush="splatter">Splatter</button>
+          <button class="brush-btn" data-brush="cloud">Cloud</button>
+        </div>
+      </div>
+
+      <!-- COLORS -->
+      <div class="panel">
+        <div class="panel-label">🎨 Color</div>
+        <div class="panel-row">
+          <div class="color-btn" style="background:#e07a9f;" data-color="#e07a9f"></div>
+          <div class="color-btn" style="background:#e63946;" data-color="#e63946"></div>
+          <div class="color-btn" style="background:#f4a261;" data-color="#f4a261"></div>
+          <div class="color-btn" style="background:#f0c96b;" data-color="#f0c96b"></div>
+          <div class="color-btn" style="background:#a0d98f;" data-color="#a0d98f"></div>
+          <div class="color-btn" style="background:#2ec4b6;" data-color="#2ec4b6"></div>
+          <div class="color-btn" style="background:#7ab8e0;" data-color="#7ab8e0"></div>
+          <div class="color-btn" style="background:#b59be8;" data-color="#b59be8"></div>
+          <div class="color-btn" style="background:#264653;" data-color="#264653"></div>
+          <div class="color-btn" style="background:#e9c46a;" data-color="#e9c46a"></div>
+        </div>
+      </div>
+
+      <!-- BRUSH SIZE + BUTTONS -->
+      <div class="panel">
+        <div class="panel-label">📏 Size</div>
+        <div class="panel-row" id="bottom-row">
+          <span style="font-size:13px;">S</span>
+          <input type="range" id="brushSize" min="5" max="60" value="28" />
+          <span style="font-size:13px;">L</span>
+          <button class="icon-btn" id="clearBtn" title="Clear">🗑️</button>
+          <button class="icon-btn" id="saveBtn" title="Save">💾</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/7.3.2/pixi.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
